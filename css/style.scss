@@ -58,7 +58,7 @@ body {
   color: var(--text-primary);
   position: relative;
   z-index: 6;
-  background: var(--surface-dark);
+  background: linear-gradient(180deg, #000C22 0%, #003088 100%);
 }
 
 body.light {
@@ -3430,11 +3430,67 @@ ul {
   justify-content: center;
 
   &__items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-radius: 20px;
+    background-image: url(../images/space.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 24px;
+    min-height: 640px;
+    max-width: 600px;
+    margin: 0 20px;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(180deg, #8467FD, #013377);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  }
+
+  &__top {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 10px;
+  }
+
+  &__bottom {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 12px;
+    position: relative;
+    background-color: rgba(4, 13, 33, 0.7);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: linear-gradient(180deg, #DA27D8, #FE046A);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
   }
 
   &__logo {
@@ -3445,24 +3501,29 @@ ul {
     display: flex;
   }
 
+  &__title {
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 100%;
+  }
+
   &__text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 100%;
+    color: #708AB2;
     text-align: center;
-    span {
-      font-weight: 800;
-      font-size: 32px;
-      line-height: 110%;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      text-align: center;
-      color: var(--text-primary);
-    }
-    p {
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 100%;
-      text-align: center;
-      color: var(--text-primary);
-      margin-top: 8px;
+
+    a {
+      color: #DB26D6;
     }
   }
 }
