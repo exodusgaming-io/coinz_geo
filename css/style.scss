@@ -3524,6 +3524,10 @@ ul {
     color: #708AB2;
     text-align: center;
 
+    &-title {
+      font-weight: 600;
+    }
+
     a {
       color: #DB26D6;
     }
@@ -3877,6 +3881,16 @@ ul {
     }
 }
 
+.other__btns {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 
-
-
+  .btn {
+    flex: 1;
+    text-align: center;
+  }
+}
