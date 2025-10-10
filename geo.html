@@ -32,14 +32,36 @@
         </div>
       </div>
       <div class="other__bottom">
+        <div class="other__text other__text-title">Think you’re in an eligible location and got this message by mistake?
+        </div>
         <div class="other__text">
-          Think you’re in an eligible location and got this message by mistake? Don’t worry , just click the chat
-          button in the bottom-right corner to chat with a member of our team or email us at <a
-            href="mailto:support@coinz.us">support@coinz.us</a> We’re always happy to help!
+          Don´t worry, feel free to reach out to our support team using one of the options below. We’re always happy to
+          help!
+        </div>
+        <div class="other__btns">
+          <a href="#" class="btn btn--grey" id="live-chat-btn">
+            Live Chat
+          </a>
+          <a href="mailto:support@coinz.us" class="btn btn--pink">
+            Email
+          </a>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const liveChatBtn = document.getElementById('live-chat-btn');
+
+      liveChatBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage('openLiveChat', '*');
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
